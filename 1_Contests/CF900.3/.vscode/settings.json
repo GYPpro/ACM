@@ -1,0 +1,9 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "editor.fontFamily": "consolas, 'Courier New', monospace",
+    "editor.minimap.maxColumn": 150,
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}

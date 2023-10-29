@@ -1,0 +1,16 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "editor.fontFamily": "consolas, 'Courier New', monospace",
+    "editor.minimap.maxColumn": 150,
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "map": "cpp",
+        "algorithm": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "unordered_map": "cpp"
+    }
+}
