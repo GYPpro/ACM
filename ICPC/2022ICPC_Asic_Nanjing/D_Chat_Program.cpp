@@ -1,7 +1,7 @@
 #define _USE_IOSTREAM_
 // #define _PRIV_TEST_
 
-#define _WITH_T_
+// #define _WITH_T_
 
 #ifndef _USE_IOSTREAM_
 #define _USE_STDIO_
@@ -27,66 +27,121 @@
 #define mod1 998244353
 
 using namespace std;
-
-class SS{
+//HACK:
+class SS
+{
 public:
     vector<ll> arr;
+    vector<ll int> cnt;
+    ll int sum;
+    // ll int NO_CMP, ALL_CMP;
     ll maxLim;
     ll minLim;
-    ll int k,m,c,d;
-    SS(ll n)
+    ll int n, k, m, c, d;
+    int prm(ll int i)
     {
-        arr.resize(n);
+        return min((ll)max(i, 0LL), n);
+    }
+    void fill()
+    {
+        for (int i = 0; i < cnt.size(); i++)
+            cnt[i] = 0;
+    }
+    SS(ll _n)
+    {
+        n = _n;
+        arr.resize(n + 1);
+        cnt.resize(n + 2);
     }
     bool check(ll t)
     {
-        return 0;
+        fill();
+        for (int i = 1; i <= n; i++)
+        {
+            if(arr[i] > t)
+            {
+                cnt[1] ++;
+                cnt[n+1]--;
+            }else if (!d)
+            {
+                if((arr[i] + c) > t)
+                {
+                    cnt[prm(i-m)] ++;
+                    cnt[prm(i)] --;
+                }
+            }
+            else
+            {
+                ll int tc = (t - arr[i] - c) / d + 1; //  5-1:2*2;
+                tc = min(tc,m);
+                cnt[prm(i-m+1)] ++;
+                cnt[prm(i-tc +1)] --;
+            }
+        }
+        sum = 0;
+        ll int maxn;
+        for (int i = 1; i <= n; i++)
+        {
+            cnt[i] += sum;
+            sum = cnt[i];
+            maxn = max(sum, maxn);
+        }
+        return maxn > k;
     }
+
+    void init()
+    {
+        ll int tm = 0;
+        for(int i = 0;i < arr.size(); i++) tm = max(arr[i],tm);
+        maxLim = tm + m*d+c;
+        minLim = 0;
+    }
+
     ll getAns()
     {
         ll l = minLim,
            r = maxLim + 1;
         while (l + 1 < r)
-        {                          // 如果两点不相邻
-            ll mid = (l + r) / 2; // 取中间值
-            if (check(mid))        // 如果可行
-                l = mid;           // 升高锯片高度
+        {
+            ll mid = (l + r) / 2;
+            if (check(mid))
+                l = mid;
             else
-                r = mid; // 否则降低锯片高度
+                r = mid;
         }
-        return l; // 返回左边值
+        return l;
     }
 };
-
 
 void solve()
 {
     ll int n;
     cin >> n;
-    ll int k,m,c,d;
-    cin >> k >> m >> c >> d;
     SS ss = SS(n);
-    for(int i = 0;i < n;i ++) cin >> ss.arr[i];
-    
+    cin >> ss.k >> ss.m >> ss.c >> ss.d;
+    for (int i = 0; i < n; i++)
+        cin >> ss.arr[i + 1];
+    ss.init();
+    cout << ss.getAns() << "\n";
 }
 
 int main()
 {
-    #ifndef _PRIV_TEST_
+#ifndef _PRIV_TEST_
     std::ios::sync_with_stdio(false);
     std::cin.tie(0);
     std::cout.tie(0);
-    #endif
+#endif
     int T = 1;
 
-    #ifdef _WITH_T_
-        #ifdef _USE_IOSTREAM_
-            cin >> T;
-        #endif
-        #ifdef _USE_STDIO_
-            scanf("%d",&T);
-        #endif
-    #endif
+#ifdef _WITH_T_
+#ifdef _USE_IOSTREAM_
+    cin >> T;
+#endif
+#ifdef _USE_STDIO_
+    scanf("%d", &T);
+#endif
+#endif
 
     // for(;;) test();
     for (int i = 0; i < T; i++)
