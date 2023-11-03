@@ -3,7 +3,10 @@
     "editor.fontFamily": "consolas, 'Courier New'",
     "editor.minimap.maxColumn": 150,
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "queue": "cpp",
+        "vector": "cpp",
+        "xiosbase": "cpp"
     },
     "editor.detectIndentation": false,
     "editor.insertSpaces": true,
