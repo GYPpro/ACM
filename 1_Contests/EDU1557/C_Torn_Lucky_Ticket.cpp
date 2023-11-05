@@ -55,7 +55,7 @@ void solve()
             sumr -= arr[i][j]-'0';
             if((j+1)*2 >= arr[i].size()) 
                 // ans += (2-(j==(arr[i].size()-1)))*cnt[pair<int,int>(2*(j+1)-arr[i].size(),suml-sumr)];
-                ans += cnt[pair<int,int>(2*(j+1)-arr[i].size(),suml-sumr)];
+                ans += cnt[pair<int,int>(2*(j+1)-arr[i].size(),suml-sumr)]
         }
         suml = 0;
         sumr = 0;
