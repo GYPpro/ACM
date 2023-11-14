@@ -207,7 +207,7 @@ private:
         if (l <= m)
             subUpdateMT(l, r, c, s, m, p * 2);
         if (r > m)
-            subUpdateMT(l, r, c, m + 1, t, p * 2 + 1);
+            subUpdateMT(l, r, c, m + 1, t, p * 2 + 1);                                                                   
         d[p] = (d[p * 2] + d[p * 2 + 1]) % mod;
         //    合并运算符 ↑
     }
