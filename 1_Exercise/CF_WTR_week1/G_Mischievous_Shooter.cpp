@@ -72,7 +72,7 @@ int solMtx(const vector<vector<int>> &mtx,int k) //V1
         {
             tsSum += sumX[j][i+1] - sumX[j][max(0,i-k+1)];
             if(i+j-k+1 >= 0)
-                if(i+j-k+1 < m) 
+                if(i+j-k+1 <= m) 
                     tsSum -= sumD[i+j-k+1][min(j,(int)sumD[i+j-k+1].size()-1)]
                      - sumD[i+j-k+1][max(0,j-k)];
                     // else tsSum -= sumD[max(0,m+(j-k-1))][min(m-i-1+k,(int)sumD[max(0,m+(j-k-1))].size()-1)] - sumD[max(0,m+(j-k-1))][max(0,m-i-1)];

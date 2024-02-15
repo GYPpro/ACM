@@ -1,0 +1,1 @@
+{"name":"Local: tmp","url":"d:\\Desktop\\Document\\Coding\\C++\\ACM\\1_Exercise\\CF_WTR_week1\\tmp.cpp","tests":[{"id":1706266200468,"input":"1\n4 6\nA<B\nA<C\nB<C\nC<D\nB<D\nA<B","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Desktop\\Document\\Coding\\C++\\ACM\\1_Exercise\\CF_WTR_week1\\tmp.cpp","group":"local","local":true}
