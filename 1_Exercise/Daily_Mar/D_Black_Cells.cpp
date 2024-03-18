@@ -35,9 +35,9 @@ class solution{
         {
             nowRg = x.first;
             int leng = x.second - x.first +1;
+            if(leng <= 1) rqOvr ++;
             step += 2;
             if(!ifOvr){
-                if(leng <= 1) rqOvr ++;
                 if(nowBlks + leng >= k)
                 {
                     ifOvr = 1;
@@ -61,7 +61,7 @@ class solution{
             cout << -1 << "\n";
             return;
         }
-        step = 1145141919810LL;
+        step = INT64_MAX;
         for(auto x:steps)
             step = min(step,x.second-2*(x.first-k));
         cout << step << "\n";
