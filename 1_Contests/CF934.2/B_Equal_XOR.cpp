@@ -23,17 +23,17 @@ class solution{
         int n,k;
         cin >> n >> k;
         k *= 2;
-        set<int> eqlr;
-        set<int> eqdsf;
-        set<int> eqdss;
-        vector<int> fs(n);
-        vector<int> ss(n);
-        map<int,int> cntf;
-        map<int,int> cnts;
-        vector<int> gnans1;
-        vector<int> gnans2;
-        vector<int> leqdsf;
-        vector<int> leqdss;
+        set<int> eqlr;       // 分居左右的数字 equal left and right
+        set<int> eqdsf;      // 两个都在左边的数字 equal char doubled (at) string (where located at) first
+        set<int> eqdss;      // 两个都在右边的数字 equal char doubled (at) string (where located at) second
+        vector<int> fs(n);   // 左边输入 fisrt string
+        vector<int> ss(n);   // 右边输入 secone string
+        map<int,int> cntf;   // 左边计数 count first
+        map<int,int> cnts;   // 右边计数 count second
+        vector<int> gnans1;  // 生成左边答案 generated ans 1
+        vector<int> gnans2;  // 生成右边答案 generated ans 2
+        vector<int> leqdsf;  // 两个都在左边的数字，set不好处理，于是用vector接住 list (of) equal char doubled (at) string (where located at) first
+        vector<int> leqdss;  // 两个都在右边的数字 list (of) equal char doubled (at) string (where located at) right
         for(auto &x:fs) cin >> x;
         for(auto &x:ss) cin >> x;
         for(auto x:fs) cntf[x] ++;

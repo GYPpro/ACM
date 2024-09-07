@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片矩阵旋转示例</title>
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-ar ound;
+    margin: 0px;
+  }
+
+  .image-container {
+    margin: 0px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+
+  .image-container img {
+    width: 100px;
+    height: 100px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- 图片矩阵 -->
+  <div class="image-container" onclick="rotateImage(this)">
+    <img src="1.jpg" alt="图片1">
+  </div>
+  <div class="image-container" onclick="rotateImage(this)">
+    <img src="1.jpg" alt="图片2">
+  </div>
+  <div class="image-container" onclick="rotateImage(this)">
+    <img src="1.jpg" alt="图片3">
+  </div>
+  <!-- 更多图片 -->
+</div>
+<div class="container">
+  <!-- 图片矩阵 -->
+  <div class="image-container" onclick="rotateImage(this)">
+    <img src="1.jpg" alt="图片1">
+  </div>
+  <div class="image-container" onclick="rotateImage(this)">
+    <img src="1.jpg" alt="图片2">
+  </div>
+  <div class="image-container" onclick="rotateImage(this)">
+    <img src="1.jpg" alt="图片3">
+  </div>
+  <!-- 更多图片 -->
+</div>
+
+<script>
+  function rotateImage(element) {
+    const currentTransform = element.style.transform;
+    const newTransform = currentTransform === 'rotate(90deg)' ? 'rotate(0deg)' : 'rotate(90deg)';
+    element.style.transform = newTransform;
+  }
+</script>
+
+</body>
+</html>
