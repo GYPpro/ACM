@@ -31,4 +31,4 @@ signed main(){
     cin >> t;
     cout << t;
 
-}
+}   
